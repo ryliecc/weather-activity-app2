@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { uid } from "uid";
 import useLocalStorageState from "use-local-storage-state";
 import Weather from "./components/Weather";
@@ -11,6 +11,24 @@ export default function App() {
     "allActivities",
     []
   );
+  const initialActivities = [
+    {
+      id: uid(),
+      name: "have a vegan BBQ 🌽",
+      isForGoodWeather: true,
+      isForBadWeather: false,
+    },
+    {
+      id: uid(),
+      name: "read a book 📖",
+      isForGoodWeather: true,
+      isForBadWeather: true,
+    },
+  ];
+
+  if (allActivities == null) {
+    setAllActivities(initialActivities);
+  }
 
   function handleAddActivity(event) {
     event.preventDefault();
@@ -22,7 +40,6 @@ export default function App() {
       isForBadWeather: form.elements.isRainy.checked,
     };
     setAllActivities([...allActivities, newActivity]);
-    console.log(allActivities);
     form.reset();
     form.elements.name.focus();
   }
@@ -30,7 +47,7 @@ export default function App() {
   return (
     <>
       <Weather>
-        <ActivityList />
+        <ActivityList displayedActivities={allActivities} />
       </Weather>
       <ActivityForm onAddActivity={handleAddActivity} />
     </>
