@@ -1,0 +1,57 @@
+.activity-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: start;
+  gap: 0.2em;
+  border: var(--color-wine) double 0.5em;
+  border-radius: 15px;
+  margin: 1em;
+  padding: 0.3em;
+  background-color: var(--color-lightrose);
+}
+
+.activity-form__heading {
+  justify-self: center;
+}
+
+.activity-form__name-label {
+}
+
+.activity-form__name {
+  background-color: var(--color-rosegold);
+}
+
+.activity-form__sunny-section {
+  display: flex;
+  justify-content: space-between;
+}
+
+.activity-form__sunny-checkbox-label {
+}
+
+.activity-form__sunny-checkbox {
+  margin-right: 8em;
+}
+
+.activity-form__rainy-section {
+  display: flex;
+  justify-content: space-between;
+}
+
+.activity-form__rainy-checkbox-label {
+}
+
+.activity-form__rainy-checkbox {
+  margin-right: 8em;
+}
+
+.activity-form__submit-button {
+  align-self: center;
+  border: dotted var(--color-lightrose);
+  width: 50%;
+  padding: 0.2em;
+  font-size: 1.3em;
+  background-color: var(--color-wine);
+  color: var(--color-lightrose);
+}

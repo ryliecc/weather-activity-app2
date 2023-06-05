@@ -1,4 +1,20 @@
+:root {
+  /* FADED ROSE COLOR PALETTE */
+  --color-white: #dfdfde;
+  --color-wine: #a2798f;
+  --color-rosegold: #d7c6cf;
+  --color-teal: #8caba8;
+  --color-lightrose: #ebdada;
+}
+
 * {
   margin: 0;
   padding: 0;
+  background-color: transparent;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  color: var(--color-wine);
+}
+
+body {
+  background-color: var(--color-teal);
 }

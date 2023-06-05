@@ -1,0 +1,16 @@
+.weather {
+  display: flex;
+  flex-direction: column;
+  border: var(--color-wine) double 0.5em;
+  border-radius: 15px;
+  margin: 1em;
+  background-color: var(--color-lightrose);
+}
+.weather__heading {
+  text-align: center;
+  font-size: 3em;
+}
+.weather__text {
+  text-align: center;
+  font-size: 1.4em;
+}
