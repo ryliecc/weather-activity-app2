@@ -4,8 +4,11 @@ import useLocalStorageState from "use-local-storage-state";
 import Weather from "./components/Weather";
 import ActivityForm from "./components/ActivityForm";
 import ActivityList from "./components/ActivityList";
+import LocationForm from "./components/LocationForm";
 
 export default function App() {
+  const [location, setLocation] = useState("europe");
+  const fetchURL = "https://example-apis.vercel.app/api/weather/" + location;
   const [weather, setWeather] = useState([]);
   const [allActivities, setAllActivities] = useLocalStorageState(
     "allActivities",
@@ -45,9 +48,7 @@ export default function App() {
 
   useEffect(() => {
     async function fetchWeather() {
-      const response = await fetch(
-        "https://example-apis.vercel.app/api/weather"
-      );
+      const response = await fetch(fetchURL);
       const weather = await response.json();
       setWeather(weather);
       console.log(weather);
@@ -56,7 +57,7 @@ export default function App() {
     return () => {
       clearInterval(fetchIntervId);
     };
-  }, []);
+  }, [fetchURL]);
 
   function handleAddActivity(event) {
     event.preventDefault();
@@ -79,6 +80,12 @@ export default function App() {
     setAllActivities(updatedActivities);
   }
 
+  function handleChangeLocation(event) {
+    event.preventDefault();
+    const form = event.target;
+    setLocation(form.elements.location.value);
+  }
+
   return (
     <>
       <Weather
@@ -90,6 +97,7 @@ export default function App() {
           displayedActivities={displayedActivities}
           onDeleteActivity={handleDeleteActivity}
         />
+        <LocationForm onChangeLocation={handleChangeLocation} />
       </Weather>
       <ActivityForm onAddActivity={handleAddActivity} />
     </>
