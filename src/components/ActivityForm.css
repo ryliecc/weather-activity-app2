@@ -1,0 +1,42 @@
+.activity-form {
+  display: grid;
+  grid-template-areas: "a a" "b c" "d e" "f g" "h h";
+  justify-content: center;
+  justify-items: start;
+  gap: 0.2em;
+}
+
+.activity-form__heading {
+  grid-area: a;
+  justify-self: center;
+}
+
+.activity-form__name-label {
+  grid-area: b;
+}
+
+.activity-form__name {
+  grid-area: c;
+}
+
+.activity-form__sunny-label {
+  grid-area: d;
+}
+
+.activity-form__sunny {
+  grid-area: e;
+}
+
+.activity-form__rainy-label {
+  grid-area: f;
+}
+
+.activity-form__rainy {
+  grid-area: g;
+}
+
+.activity-form__submit-button {
+  grid-area: h;
+  justify-self: center;
+  width: 50%;
+}
