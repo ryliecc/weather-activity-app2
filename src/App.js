@@ -60,7 +60,7 @@ export default function App() {
 
   return (
     <>
-      <Weather>
+      <Weather isGoodWeather={isGoodWeather}>
         <ActivityList displayedActivities={displayedActivities} />
       </Weather>
       <ActivityForm onAddActivity={handleAddActivity} />
