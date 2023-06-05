@@ -1,11 +1,14 @@
 import "./App.css";
 import Weather from "./components/Weather";
 import ActivityForm from "./components/ActivityForm";
+import ActivityList from "./components/ActivityList";
 
 export default function App() {
   return (
     <>
-      <Weather />
+      <Weather>
+        <ActivityList />
+      </Weather>
       <ActivityForm />
     </>
   );
