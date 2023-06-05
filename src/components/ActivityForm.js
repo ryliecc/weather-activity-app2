@@ -1,15 +1,15 @@
-export default function ActivityForm({ onSubmit }) {
+export default function ActivityForm({ onAddActivity }) {
   return (
-    <form className="activity-form" onSubmit={onSubmit}>
+    <form className="activity-form" onSubmit={onAddActivity}>
       <h2 className="activity-form__heading">Add new activity!</h2>
-      <label
-        for="activity-form__title"
-        className="activity-form__title-label"
-      ></label>
+      <label for="activity-form__name" className="activity-form__name-label">
+        Name:
+      </label>
       <input
         type="text"
-        id="activity-form__title"
-        className="activity-form__title"
+        name="name"
+        id="activity-form__name"
+        className="activity-form__name"
       />
       <label
         for="activity-form__sunny-checkbox"
@@ -20,6 +20,7 @@ export default function ActivityForm({ onSubmit }) {
       <input
         type="checkbox"
         id="activity-form__sunny-checkbox"
+        name="isSunny"
         className="activity-form__sunny-checkbox"
       />
       <label
@@ -31,6 +32,7 @@ export default function ActivityForm({ onSubmit }) {
       <input
         type="checkbox"
         id="activity-form__rainy-checkbox"
+        name="isRainy"
         className="activity-form__rainy-checkbox"
       />
       <button type="submit" className="activity-form__submit-button">
