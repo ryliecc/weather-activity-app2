@@ -7,6 +7,7 @@ import ActivityForm from "./components/ActivityForm";
 import ActivityList from "./components/ActivityList";
 
 export default function App() {
+  const [weather, setWeather] = useState([]);
   const [allActivities, setAllActivities] = useLocalStorageState(
     "allActivities",
     []
@@ -32,17 +33,31 @@ export default function App() {
     (activity) => activity.isForBadWeather === true
   );
   let displayedActivities;
-  const isGoodWeather = true;
 
   if (allActivities == null) {
     setAllActivities(initialActivities);
   }
 
-  if (isGoodWeather === true) {
+  if (weather.isGoodWeather === true) {
     displayedActivities = sunnyActivities;
   } else {
     displayedActivities = rainyActivities;
   }
+
+  useEffect(() => {
+    async function fetchWeather() {
+      const response = await fetch(
+        "https://example-apis.vercel.app/api/weather"
+      );
+      const weather = await response.json();
+      setWeather(weather);
+      console.log(weather);
+    }
+    const fetchIntervId = setInterval(fetchWeather, 5000);
+    return () => {
+      clearInterval(fetchIntervId);
+    };
+  }, []);
 
   function handleAddActivity(event) {
     event.preventDefault();
@@ -60,7 +75,11 @@ export default function App() {
 
   return (
     <>
-      <Weather isGoodWeather={isGoodWeather}>
+      <Weather
+        isGoodWeather={weather.isGoodWeather}
+        condition={weather.condition}
+        temperature={weather.temperature}
+      >
         <ActivityList displayedActivities={displayedActivities} />
       </Weather>
       <ActivityForm onAddActivity={handleAddActivity} />
