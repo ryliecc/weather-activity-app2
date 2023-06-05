@@ -1,12 +1,16 @@
 import "./App.css";
 import { useState } from "react";
 import { uid } from "uid";
+import useLocalStorageState from "use-local-storage-state";
 import Weather from "./components/Weather";
 import ActivityForm from "./components/ActivityForm";
 import ActivityList from "./components/ActivityList";
 
 export default function App() {
-  const [allActivities, setAllActivities] = useState([]);
+  const [allActivities, setAllActivities] = useLocalStorageState(
+    "allActivities",
+    []
+  );
 
   function handleAddActivity(event) {
     event.preventDefault();
