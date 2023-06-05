@@ -25,9 +25,23 @@ export default function App() {
       isForBadWeather: true,
     },
   ];
+  const sunnyActivities = allActivities.filter(
+    (activity) => activity.isForGoodWeather === true
+  );
+  const rainyActivities = allActivities.filter(
+    (activity) => activity.isForBadWeather === true
+  );
+  let displayedActivities;
+  const isGoodWeather = true;
 
   if (allActivities == null) {
     setAllActivities(initialActivities);
+  }
+
+  if (isGoodWeather === true) {
+    displayedActivities = sunnyActivities;
+  } else {
+    displayedActivities = rainyActivities;
   }
 
   function handleAddActivity(event) {
@@ -47,7 +61,7 @@ export default function App() {
   return (
     <>
       <Weather>
-        <ActivityList displayedActivities={allActivities} />
+        <ActivityList displayedActivities={displayedActivities} />
       </Weather>
       <ActivityForm onAddActivity={handleAddActivity} />
     </>
