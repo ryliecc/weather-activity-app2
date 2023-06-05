@@ -73,6 +73,13 @@ export default function App() {
     form.elements.name.focus();
   }
 
+  function handleDeleteActivity(toDelete) {
+    const updatedActivities = allActivities.filter(
+      (activity) => activity.id != toDelete
+    );
+    setAllActivities(updatedActivities);
+  }
+
   return (
     <>
       <Weather
@@ -80,7 +87,10 @@ export default function App() {
         condition={weather.condition}
         temperature={weather.temperature}
       >
-        <ActivityList displayedActivities={displayedActivities} />
+        <ActivityList
+          displayedActivities={displayedActivities}
+          onDeleteActivity={handleDeleteActivity}
+        />
       </Weather>
       <ActivityForm onAddActivity={handleAddActivity} />
     </>
