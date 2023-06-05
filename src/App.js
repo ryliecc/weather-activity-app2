@@ -1,7 +1,8 @@
-import logo from "./logo.svg";
 import "./App.css";
+import Weather from "./components/Weather";
+import ActivityForm from "./components/ActivityForm";
 
-function App() {
+export default function App() {
   return (
     <>
       <Weather />
@@ -9,5 +10,3 @@ function App() {
     </>
   );
 }
-
-export default App;
