@@ -14,30 +14,34 @@ export default function ActivityForm({ onAddActivity }) {
         id="activity-form__name"
         className="activity-form__name"
       />
-      <label
-        htmlFor="activity-form__sunny-checkbox"
-        className="activity-form__sunny-checkbox-label"
-      >
-        Good weather activity:
-      </label>
-      <input
-        type="checkbox"
-        id="activity-form__sunny-checkbox"
-        name="isSunny"
-        className="activity-form__sunny-checkbox"
-      />
-      <label
-        htmlFor="activity-form__rainy-checkbox"
-        className="activity-form__rainy-checkbox-label"
-      >
-        Bad weather activity:
-      </label>
-      <input
-        type="checkbox"
-        id="activity-form__rainy-checkbox"
-        name="isRainy"
-        className="activity-form__rainy-checkbox"
-      />
+      <section className="activity-form__sunny-section">
+        <label
+          htmlFor="activity-form__sunny-checkbox"
+          className="activity-form__sunny-checkbox-label"
+        >
+          Good weather activity:
+        </label>
+        <input
+          type="checkbox"
+          id="activity-form__sunny-checkbox"
+          name="isSunny"
+          className="activity-form__sunny-checkbox"
+        />
+      </section>
+      <section className="activity-form__rainy-section">
+        <label
+          htmlFor="activity-form__rainy-checkbox"
+          className="activity-form__rainy-checkbox-label"
+        >
+          Bad weather activity:
+        </label>
+        <input
+          type="checkbox"
+          id="activity-form__rainy-checkbox"
+          name="isRainy"
+          className="activity-form__rainy-checkbox"
+        />
+      </section>
       <button type="submit" className="activity-form__submit-button">
         Submit
       </button>

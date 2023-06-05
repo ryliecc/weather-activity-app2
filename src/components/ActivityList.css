@@ -8,13 +8,15 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  border: solid thin;
+  border: dotted var(--color-wine);
   text-align: center;
   padding: 0.3em;
+  padding-inline: 0.6em;
+  background-color: var(--color-rosegold);
 }
 .activity-list-item__name {
 }
 .activity-list-item__delete-button {
   border: none;
-  background-color: transparent;
+  font-size: 1em;
 }
