@@ -7,8 +7,12 @@ export default function ActivityList({
       {displayedActivities.map((activity) => {
         return (
           <li className="activity-list-item" key={activity.id}>
-            {activity.name}
-            <button type="button" onClick={() => onDeleteActivity(activity.id)}>
+            <p className="activity-list-item__name">{activity.name}</p>
+            <button
+              type="button"
+              onClick={() => onDeleteActivity(activity.id)}
+              className="activity-list-item__delete-button"
+            >
               ❌
             </button>
           </li>
