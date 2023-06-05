@@ -1,4 +1,3 @@
-import "./App.css";
 import { useState, useEffect } from "react";
 import { uid } from "uid";
 import useLocalStorageState from "use-local-storage-state";
@@ -75,7 +74,7 @@ export default function App() {
 
   function handleDeleteActivity(toDelete) {
     const updatedActivities = allActivities.filter(
-      (activity) => activity.id != toDelete
+      (activity) => activity.id !== toDelete
     );
     setAllActivities(updatedActivities);
   }
