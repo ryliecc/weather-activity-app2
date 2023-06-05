@@ -2,7 +2,10 @@ export default function ActivityForm({ onAddActivity }) {
   return (
     <form className="activity-form" onSubmit={onAddActivity}>
       <h2 className="activity-form__heading">Add new activity!</h2>
-      <label for="activity-form__name" className="activity-form__name-label">
+      <label
+        htmlFor="activity-form__name"
+        className="activity-form__name-label"
+      >
         Name:
       </label>
       <input
@@ -12,7 +15,7 @@ export default function ActivityForm({ onAddActivity }) {
         className="activity-form__name"
       />
       <label
-        for="activity-form__sunny-checkbox"
+        htmlFor="activity-form__sunny-checkbox"
         className="activity-form__sunny-checkbox-label"
       >
         Good weather activity:
@@ -24,7 +27,7 @@ export default function ActivityForm({ onAddActivity }) {
         className="activity-form__sunny-checkbox"
       />
       <label
-        for="activity-form__rainy-checkbox"
+        htmlFor="activity-form__rainy-checkbox"
         className="activity-form__rainy-checkbox-label"
       >
         Bad weather activity:
