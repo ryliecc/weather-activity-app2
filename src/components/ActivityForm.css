@@ -15,9 +15,6 @@
   justify-self: center;
 }
 
-.activity-form__name-label {
-}
-
 .activity-form__name {
   background-color: var(--color-rosegold);
 }
@@ -27,9 +24,6 @@
   justify-content: space-between;
 }
 
-.activity-form__sunny-checkbox-label {
-}
-
 .activity-form__sunny-checkbox {
   margin-right: 8em;
 }
@@ -37,9 +31,6 @@
 .activity-form__rainy-section {
   display: flex;
   justify-content: space-between;
-}
-
-.activity-form__rainy-checkbox-label {
 }
 
 .activity-form__rainy-checkbox {
