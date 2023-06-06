@@ -1,0 +1,37 @@
+.location-form {
+  padding: 0.4em;
+}
+.location-form__fieldset {
+  border: dotted var(--color-wine);
+  border-radius: 15px;
+  padding: 0.3em;
+  display: grid;
+  grid-template-areas: "a b" "c d" "e e";
+  justify-content: space-between;
+  gap: 0.3em;
+}
+.location-form__option1 {
+  grid-area: a;
+}
+.location-form__option2 {
+  grid-area: b;
+}
+.location-form__option3 {
+  grid-area: c;
+}
+.location-form__option4 {
+  grid-area: d;
+}
+.location-form__input {
+  margin: 0.4em;
+}
+.location-form__submit-button {
+  grid-area: e;
+  justify-self: center;
+  border: dotted var(--color-lightrose);
+  width: 40%;
+  padding: 0.2em;
+  font-size: 1.3em;
+  background-color: var(--color-wine);
+  color: var(--color-lightrose);
+}

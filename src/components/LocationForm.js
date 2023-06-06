@@ -3,7 +3,7 @@ export default function LocationForm({ onChangeLocation }) {
     <form className="location-form" onSubmit={onChangeLocation}>
       <fieldset className="location-form__fieldset">
         <legend className="location-form__legend">I am somewhere in:</legend>
-        <div className="location-form__options">
+        <div className="location-form__option1">
           <input
             type="radio"
             id="europe"
@@ -15,7 +15,8 @@ export default function LocationForm({ onChangeLocation }) {
           <label htmlFor="europe" className="location-form__input-label">
             Europe
           </label>
-
+        </div>
+        <div className="location-form__option2">
           <input
             type="radio"
             id="arctic"
@@ -26,7 +27,8 @@ export default function LocationForm({ onChangeLocation }) {
           <label htmlFor="arctic" className="location-form__input-label">
             the Arctic
           </label>
-
+        </div>
+        <div className="location-form__option3">
           <input
             type="radio"
             id="sahara"
@@ -37,7 +39,8 @@ export default function LocationForm({ onChangeLocation }) {
           <label htmlFor="sahara" className="location-form__input-label">
             the Sahara
           </label>
-
+        </div>
+        <div className="location-form__option4">
           <input
             type="radio"
             id="rainforest"
@@ -49,7 +52,9 @@ export default function LocationForm({ onChangeLocation }) {
             the Rainforest
           </label>
         </div>
-        <button type="submit">Go!</button>
+        <button type="submit" className="location-form__submit-button">
+          Go!
+        </button>
       </fieldset>
     </form>
   );
