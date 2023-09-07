@@ -28,6 +28,9 @@ export default function App() {
       isForBadWeather: true,
     },
   ];
+  if (allActivities == null) {
+    setAllActivities(initialActivities);
+  }
   const sunnyActivities = allActivities.filter(
     (activity) => activity.isForGoodWeather === true
   );
@@ -35,10 +38,6 @@ export default function App() {
     (activity) => activity.isForBadWeather === true
   );
   let displayedActivities;
-
-  if (allActivities == null) {
-    setAllActivities(initialActivities);
-  }
 
   if (weather.isGoodWeather === true) {
     displayedActivities = sunnyActivities;
